@@ -1,8 +1,18 @@
 <html>
   <body>
     <div>
-      <h1>My name is <%=@name%>!</h1>
+
+      <%if @name %>
+        <h1>My name is <%=@name%>!</h1>
+      <% else %>
+        <form action="/named-cat"/>
+          <input type="text" name="name"/>
+          <input type="submit" value="Submit"/>
+        </form>
+      <% end %>
+
       <img style="border-style: dotted; border-color: red" src="catpic.png" />
+
     </div>
   </body>
 </html>
